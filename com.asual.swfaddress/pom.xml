@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.asual.swfaddress</groupId>
+    <artifactId>swfaddress</artifactId>
+    <version>2.5.0.882</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>com.asual.swfaddress</artifactId>
+  <name>com.asual.swfaddress</name>
+  <packaging>swc</packaging>
+
+  <url>http://www.asual.com/swfaddress/</url>
+
+  <dependencies>
+    <!-- flash -->
+    <dependency>
+      <groupId>com.adobe.flex.framework</groupId>
+      <artifactId>playerglobal</artifactId>
+      <type>swc</type>
+      <classifier>10.2</classifier>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <sourceDirectory>src/main/actionscript</sourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.sonatype.flexmojos</groupId>
+        <artifactId>flexmojos-maven-plugin</artifactId>
+        <version>${org.sonatype.flexmojos.version}</version>
+        <extensions>true</extensions>
+        <dependencies>
+          <dependency>
+            <groupId>com.adobe.flex</groupId>
+            <artifactId>compiler</artifactId>
+            <version>${com.adobe.flex.version}</version>
+            <type>pom</type>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <targetPlayer>10.2.0</targetPlayer>
+          <configurationReport>true</configurationReport>
+          <debug>false</debug>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
