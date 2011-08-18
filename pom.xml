@@ -18,6 +18,13 @@
     </license>
   </licenses>
 
+  <distributionManagement>
+    <repository>
+      <id>de.oliverlietz.maven</id>
+      <url>sftp://maven.oliverlietz.de/</url>
+    </repository>
+  </distributionManagement>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -43,6 +50,16 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-ssh</artifactId>
+        <version>1.0</version>
+      </extension>
+    </extensions>
+  </build>
 
   <repositories>
     <repository>
