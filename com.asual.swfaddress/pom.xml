@@ -45,7 +45,6 @@
         </dependencies>
         <configuration>
           <targetPlayer>10.2.0</targetPlayer>
-          <configurationReport>true</configurationReport>
           <debug>false</debug>
         </configuration>
       </plugin>
