@@ -36,6 +36,7 @@
 
   <modules>
     <module>com.asual.swfaddress</module>
+    <module>swfaddress-js</module>
   </modules>
 
   <dependencyManagement>
@@ -52,6 +53,22 @@
   </dependencyManagement>
 
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>ro.isdc.wro4j</groupId>
+          <artifactId>wro4j-maven-plugin</artifactId>
+          <version>1.4.0</version>
+          <dependencies>
+            <dependency>
+              <groupId>ro.isdc.wro4j</groupId>
+              <artifactId>wro4j-extensions</artifactId>
+              <version>1.4.0</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <extensions>
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
