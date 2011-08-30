@@ -1,2 +1,2 @@
-if (typeof asual === undefined) var asual = {};
-if (typeof asual.util === undefined) asual.util = {};
+if (asual === undefined) var asual = {};
+if (asual.util === undefined) asual.util = {};
