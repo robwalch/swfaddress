@@ -24,7 +24,7 @@ var SWFAddress = new function() {
 
     var _hash = function() {
             var index = _l.href.indexOf('#');
-            return index != -1 ? _ec(_dc(_crawl(_l.href.substr(index + 1), FALSE))) : '';
+            return index != -1 ? _crawl(_l.href.substr(index + 1), FALSE) : '';
         },
         _window = function() { 
             try {
@@ -294,8 +294,6 @@ var SWFAddress = new function() {
         _l = _t.location,
         _si = setInterval,
         _st = setTimeout, 
-        _dc = decodeURI,
-        _ec = encodeURI,
         _init = SWFAddressEvent.INIT,
         _change = SWFAddressEvent.CHANGE,
         _internalChange = SWFAddressEvent.INTERNAL_CHANGE,
@@ -719,7 +717,6 @@ var SWFAddress = new function() {
         if (!_supported) return null;
         if (typeof title == UNDEFINED) return;
         if (title == 'null') title = '';
-        title = _dc(title);
         _st(function() {
             _title = _d.title = title;
             if (_juststart && _frame && _frame.contentWindow && _frame.contentWindow.document) {
@@ -751,7 +748,6 @@ var SWFAddress = new function() {
         if (!_supported) return null;
         if (typeof status == UNDEFINED) return;
         if (status == 'null') status = '';
-        status = _dc(status);
         if (!_safari) {
             status = _strict((status != 'null') ? status : '', TRUE);
             if (status == '/') status = '';
@@ -779,7 +775,7 @@ var SWFAddress = new function() {
      */
     this.getValue = function() {
         if (!_supported) return null;
-        return _dc(_strict(_value, FALSE));
+        return _strict(_value, FALSE);
     };
     
     /**
@@ -792,7 +788,7 @@ var SWFAddress = new function() {
         if (!_supported) return null;
         if (typeof value == UNDEFINED) return;
         if (value == 'null') value = '';
-        value = _ec(_dc(_strict(value, TRUE)));
+        value = _strict(value, TRUE);
         if (value == '/') value = '';
         if (_value == value && !_updating) return;
         _justset = TRUE;

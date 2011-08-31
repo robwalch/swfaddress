@@ -444,7 +444,7 @@ package com.asual.swfaddress {
          * Provides the current deep linking value.
          */
         public static function getValue():String {
-            return decodeURI(_strictCheck(_value || '', false));
+            return _strictCheck(_value || '', false);
         }
 
         /**
@@ -453,7 +453,7 @@ package com.asual.swfaddress {
          */
         public static function setValue(value:String):void {
             if (value == 'undefined' || value == null) value = '';
-            value = encodeURI(decodeURI(_strictCheck(value, true)));
+            value = _strictCheck(value, true);
             if (_value == value && !_updating) return;
             _value = value;
             _call('SWFAddress.setValue', value);
