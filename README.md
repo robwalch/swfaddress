@@ -7,4 +7,4 @@ This is a stripped down (AS3/JS only) and mavenized fork of the original code of
 
 You have to encode and decode URIs in your application.
 
-Please see http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/package.html#encodeURIComponent() and http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/package.html#encodeURIComponent() for more information.
+Please see http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/package.html#encodeURI() and http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/package.html#encodeURIComponent() for more information.
